@@ -13,8 +13,6 @@ class Example(QMainWindow):
         self.pushButton.clicked.connect(self.paint)
         self.do_paint = False
 
-
-
     def paintEvent(self, event):
         if self.do_paint:
             qp = QPainter()
@@ -28,12 +26,11 @@ class Example(QMainWindow):
         self.update()
 
     def draw_flag(self, qp):
-        qp.setBrush(QColor(255, 255, 0))
+        qp.setBrush(QColor(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)))
         x = random.randint(0, 300)
         y = random.randint(0, 300)
         z = random.randint(0, 50)
         qp.drawEllipse(x, y, x + z, x + z)
-
 
 
 if __name__ == '__main__':
